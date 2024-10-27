@@ -1,0 +1,777 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dosis:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    width: 14px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgb(95, 95, 95);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #014801;
+}
+
+body {
+    font-size: 62.5%;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    background-color: rgb(226, 226, 226);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    transition: background-color 0.5s ease;
+}
+
+/* Estilos para o header quando o usuário rola */
+header.scrolled {
+    background-color: rgba(226, 226, 226, 0.267);
+    color: #fff;
+    backdrop-filter: blur(20px);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.171);
+}
+
+.header .top {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    padding-top: 13px;
+}
+
+.group-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.header .top .group-logo h2 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 12px;
+    padding-left: 5px;
+}
+
+.header .top .group-logo img {
+    width: 48px;
+    height: 48px;
+
+}
+
+.header .top button {
+    width: 125px;
+    height: 45px;
+    background-color: #199d09;
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.header .top button:hover {
+    background-color: #31c211;
+    color: rgb(219, 219, 219);
+}
+
+.header .top button:active {
+    background-color: #199d09;
+    color: white;
+    transition: 0s;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+.login-button button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #0c8b04;
+}
+
+
+.login-button button:hover {
+    background-color: #0a9600;
+    padding: 10px 23px;
+    transition: ease-in-out 0.s;
+}
+
+.login-button button a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.nav-bar .nav-list .nav-item .nav-link {
+    color: #001d00;
+}
+
+.nav-bar .nav-list .nav-item .nav-link:hover {
+    color: #007c17;
+}
+
+
+
+.inicio {
+    width: 100%;
+    height: 100vh;
+    background-image: url('/img/aquecimento-img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(85%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inicio main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+}
+
+.inicio main h1 {
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 4px 3px 4px rgba(0, 0, 0, 0.52);
+}
+
+.inicio main button {
+    color: #2fff00;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid #31c211;
+    padding: 10px 20px;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: bold;
+    background: transparent;
+    position: relative;
+    transition: all 1s;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.inicio main button:hover {
+    color: white;
+}
+
+.inicio main button::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    top: 0;
+    left: -40px;
+    transform: skewX(45deg);
+    background-color: #31c211;
+    z-index: -1;
+    transition: all 1s;
+}
+
+.inicio main button:hover::before {
+    width: 160%;
+}
+
+.about {
+    width: 100%;
+    height: 100vh;
+    background: rgb(60, 201, 43);
+    background: linear-gradient(90deg, rgb(52, 177, 38) 16%, rgba(0, 120, 0, 1) 53%, rgba(16, 171, 6, 1) 96%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about .descricao-about {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(240, 240, 240);
+}
+
+.about .descricao-about h1 {
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+.about .descricao-about p {
+    margin: 15px;
+    text-align: left;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.about .descricao-about button {
+    padding: 17px 40px;
+    margin-top: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+}
+
+.about .descricao-about button:hover {
+    letter-spacing: 3px;
+    background-color: #007800;
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(15, 193, 65) 0px 7px 29px 0px;
+}
+
+.about .descricao-about button:active {
+    letter-spacing: 3px;
+    background-color: #0c8b04;
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(24, 220, 89) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+.about .img-about {
+    width: 50%;
+    height: 100vh;
+}
+
+.about .img-about img {
+    filter: brightness(95%);
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.clima {
+    width: 100%;
+    height: 50vh;
+    background-color: rgba(0, 64, 2, 0.799);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clima .search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.clima .search input {
+    width: 100%;
+    height: 40px;
+    margin-left: 10px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #d8e2dc;
+    color: #0d0c22;
+    transition: .3s ease;
+    border: solid 1px green;
+}
+
+.clima .search input::placeholder {
+    color: #9e9ea7;
+}
+
+.clima .search input:focus {
+    border: 2px solid #0a9600;
+}
+
+.clima .search button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+
+}
+
+.clima .search button img {
+    width: 25px;
+    height: 25px;
+}
+
+.clima #weather {
+    width: 80%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Oswald', sans-serif;
+}
+
+.clima #weather hr {
+    border: 1px rgba(208, 208, 208, 0.241)solid;
+    width: 150px;
+}
+
+.clima #weather #temp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.clima #weather #title {
+    font-size: 20px;
+    margin-top: 20px;
+    color: rgb(254, 238, 238);
+}
+
+.clima #weather #other_infos {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-left: 50px;
+
+}
+
+.clima #weather #other_infos .info,
+.info2 {
+    margin-left: 3rem;
+}
+
+.clima #weather #other_infos .info,
+.info2 h2,
+p {
+    font-size: 10px;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.clima #weather #other_infos .info2 h2,
+p {
+    font-size: 13px;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.contatos {
+    width: 100%;
+    height: 90vh;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contatos .formulario-container {
+    background-color: #ffffff;
+    width: 400px;
+    height: 65vh;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.145);
+}
+
+.contatos .formulario-container form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+
+}
+
+.contatos .formulario-container h1 {
+    text-transform: uppercase;
+    color: #001d00;
+    font-size: 15px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+
+.contatos .formulario-container hr {
+    width: 200px;
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+.contatos .formulario-container input {
+    width: 325px;
+    height: 25px;
+    margin-bottom: 10px;
+    background: transparent;
+    border: none;
+    border: 1px rgba(0, 66, 0, 0.608) solid;
+    border-radius: 10px;
+    padding: 16px 14px;
+}
+
+.contatos .formulario-container input:focus {
+    outline: none;
+    border-color: #001d00;
+}
+
+.contatos .formulario-container ::placeholder {
+    color: #2828285a;
+    padding-left: 10px;
+    font-size: 10px;
+}
+
+.contatos .formulario-container ::placeholder:focus {
+    font-size: 5px;
+}
+
+.contatos .formulario-container label {
+    padding-right: 75%;
+    font-size: 0.75rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.contatos .formulario-container textarea {
+    width: 325px;
+    height: 100px;
+    padding: 16px 14px;
+    border-radius: 8px;
+}
+
+.contatos .formulario-container textarea:focus {
+    outline: none;
+    border-color: #001d00;
+}
+
+.contatos .formulario-container button {
+    width: 325px;
+    height: 30px;
+    margin-top: 15px;
+    border: 0;
+    border-radius: 2px;
+    background-color: #007800;
+    color: hsl(0, 0%, 100%);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.175);
+    letter-spacing: 1.5px;
+    font-size: 13px;
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+}
+
+.contatos .formulario-container button:hover {
+    color: #fff;
+}
+
+.contatos .formulario-container button:hover {
+    background-color: #016e01;
+    color: hsl(0, 0%, 100%);
+}
+
+.contatos .formulario-container button:active {
+    letter-spacing: 1.5px;
+    background-color: #0c8b04;
+    color: hsl(0, 0%, 100%);
+    transform: translateY(8px);
+    transition: 150ms;
+}
+
+@media (max-width:760px) {
+    .inicio {
+        height: 75vh;
+    }
+
+    .inicio main {
+        width: 100%;
+    }
+
+    .inicio main h1 {
+        font-size: 1.8rem;
+        width: 200px;
+        color: rgb(253, 253, 253);
+
+    }
+
+    .inicio main button {
+        margin-top: 20px;
+    }
+
+    .about {
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background: linear-gradient(90deg, rgb(34, 146, 22) 16%, rgb(8, 117, 8) 53%, rgb(14, 121, 7) 96%);
+    }
+
+    .about .descricao-about {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 15px;
+    }
+
+    .about .descricao-about h1 {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .about .descricao-about p {
+        margin: 15px;
+        text-align: left;
+        font-size: 10px;
+        padding-left: 10px;
+        width: 250px;
+        height: 150px;
+    }
+
+    .about .descricao-about button {
+        padding: 10px 25px;
+        margin-top: 5px;
+        font-size: 13px;
+    }
+
+    .about .descricao-about button:hover {
+        letter-spacing: 3px;
+        background-color: #007800;
+        color: hsl(0, 0%, 100%);
+        box-shadow: rgb(15, 193, 65) 0px 7px 29px 0px;
+    }
+
+    .about .descricao-about button:active {
+        letter-spacing: 3px;
+        background-color: #0c8b04;
+        color: hsl(0, 0%, 100%);
+        box-shadow: rgb(24, 220, 89) 0px 0px 0px 0px;
+        transform: translateY(10px);
+        transition: 100ms;
+    }
+
+    .about .img-about {
+        display: none;
+    }
+
+    .clima .search button img {
+        width: 19px;
+        height: 19px;
+    }
+
+    .clima .search input {
+        width: 100%;
+        height: 40px;
+        margin-left: 10px;
+        line-height: 28px;
+    }
+
+    #other_infos .vento h2 {
+        display: none;
+    }
+
+    #other_infos .vento p {
+        display: none;
+    }
+
+    .clima #weather #other_infos {
+        margin-left: 0;
+    }
+
+    .clima #weather #other_infos .info,
+    .info2 {
+        margin-left: 2rem;
+    }
+
+    .contatos .formulario-container {
+        background-color: #ffffff;
+        width: 300px;
+        height: 65vh;
+    }
+
+    .contatos .formulario-container form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px;
+
+    }
+
+    .contatos .formulario-container input {
+        width: 250px;
+        height: 20px;
+        margin-bottom: 10px;
+        padding: 14px 12px;
+    }
+
+    .contatos .formulario-container textarea {
+        width: 250px;
+        height: 80px;
+    }
+
+    .contatos .formulario-container button {
+        width: 250px;
+        height: 25px;
+        padding: 5px 20px;
+        margin-top: 10px;
+        font-size: 10px;
+    }
+
+    .contatos .formulario-container label {
+        font-size: 10px;
+    }
+
+    .header .redes {
+        display: none;
+    }
+
+    .header .list-nav {
+        display: none;
+    }
+
+    .top .group-logo img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .top .group-logo h2 {
+        font-size: 5px;
+    }
+
+    .top button {
+        display: none;
+    }
+
+    .nav-bar {
+        padding: 1rem 2rem;
+    }
+
+    .nav-item {
+        display: none;
+    }
+
+    .login-button {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+        backdrop-filter: blur(20px);
+    }
+
+    .mobile-menu li {
+        background-color: #001400;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.192);
+    }
+
+}
+
+.mobile-menu .nav-item {
+    display: block;
+    padding-top: 1.2rem;
+}
+
+.mobile-menu .login-button {
+    display: block;
+    padding: 1rem 2rem;
+}
+
+.mobile-menu .login-button button {
+    width: 100%;
+    cursor: pointer;
+}
+
+.open {
+    display: block;
+}
+
+footer {
+    width: 100%;
+    height: 20vh;
+    background-color: #001d00;
+    padding: 10px;
+}
+
+footer p {
+    color: rgb(255, 255, 255);
+    padding-top: 20px;
+    text-align: center;
+}
